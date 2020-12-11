@@ -43,6 +43,15 @@ public class Student extends User implements Comparable<Student> {
             }
         }
     }
+    
+    private boolean findCourse(String name) {
+        for (Course checkedCourse : courses) {
+            if (checkedCourse.getName().equals(name)) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public void passCourse(String name) {
         for (Course course: courses) {
@@ -89,14 +98,5 @@ public class Student extends User implements Comparable<Student> {
                 ", paidFees=" + paidFees +
                 ", totalGrade=" + GPA +
                 '}';
-    }
-
-    private boolean findCourse(String name) {
-        for (Course checkedCourse : courses) {
-            if (checkedCourse.getName().equals(name)) {
-                return true;
-            }
-        }
-        return false;
     }
 }
